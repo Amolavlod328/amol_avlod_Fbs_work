@@ -1,0 +1,205 @@
+   name: Amol Avlod
+   Batch: 11 July java
+   Frn ni: 23
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+
+
+
+1. Write an SQL query to retrieve all employees' names and salaries from a table named
+`Employees`, ordered by salary in descending order.
+-->
+
+   select name,salary from employees
+   order by salary desc;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Retrieve the top 5 highest-paid employees from the `Employees` table.
+-->
+
+ select * from employees
+ order by salary desc limit 5;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Fetch employee records from the `Employees` table, skipping the first 3 records and showing
+the next 5 records.
+-->
+   select * from employees limit 3,5;              <--
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Write a query to count the number of employees in each department from the `Employees`
+table.
+-->
+     select count(*) from employees
+     group by dept;
+                                                     <--
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Fetch the department-wise average salary from the `Employees` table, only for departments
+where the average salary is greater than 50,000.
+-->
+   select dept, avg(salary) 
+   from employees
+   group by dept
+   having avg(salary) > 50000;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Retrieve a list of products from the `Products` table where the product name contains the word
+"Laptop"
+-->
+   select * from products
+   where product_name ="Laptop";
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. Extract the first three characters from the `student_name` column in the `Students` table.
+-->
+   select  substring(name,1,3) from students;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. Fetch only those students from the `Students` table whose names start with the letter "A".
+--> 
+   select * from students
+    where name like "A%";
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Write an SQL query to find the total number of orders placed in each month, considering only
+those months where more than 100 orders were placed.
+--> 
+
+   
+
+  
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. Get the total and average sales amount per category from the `Sales` table, considering only
+categories with total sales greater than 1,00,000.
+-->
+    select sum(s_amount),avg(s_amount) from sales
+    where sales > 1,00,000
+    group by category;
+
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11. What does the following query return?
+SELECT COUNT(*) FROM Employees;
+
+a) The total number of employees
+b) The sum of salaries of employees
+c) The first record of the table
+d) An error message
+
+-->     
+      a) The total number of employees
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+12. What will be the output of the following query?
+SELECT LENGTH('Database');
+
+a) 9
+b) 8
+c) 10
+d) Error
+
+  -->
+      b) 8
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+13. Which of the following clauses is used to filter grouped results?
+a) WHERE
+b) ORDER BY
+c) HAVING
+d) GROUP BY
+  
+--> 
+   c) HAVING
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+14. What does `LEFT JOIN` do?
+a) Returns only the matching rows from both tables
+b) Returns all rows from the left table and matching rows from the right table
+c) Returns all rows from the right table and matching rows from the left table
+d) Returns all rows from both tables
+
+-->
+   b) Returns all rows from the left table and matching rows from the right table
+
+     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+15. What will be the result of the following query?
+SELECT UPPER('hello world');
+a) hello world
+b) HELLO WORLD
+c) Hello World
+d) Syntax error
+
+--> 
+   b) HELLO WORLD
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16. Question:
+You have two tables:
+• Orders with columns: order_id, customer_id, order_date, total_amount.
+• Customers with columns: customer_id, region.
+• O/P- region | total_orders
+Write an SQL query to find the total order amount (total_amount) for each region. Only include
+regions where the total order amount is greater than 10000
+
+-->
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+17. Question:
+You have two tables:
+• Books with columns: book_id, author_id, title, price.
+• Sales with columns: sale_id, book_id, sale_date, quantity.
+• O/P- author_id | total_books_sold
+
+Write an SQL query to find the total number of books sold by each author. Only include authors
+who have sold more than 100 books.
+-->
+   select b.author_id,sum(s.quantity) from books b
+   inner join s
+   on b.book_id = s.book_id
+   group by b.author_id
+   having sum(s.quantity)> 100;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
