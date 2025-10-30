@@ -1,0 +1,64 @@
+    NAME: Amol avlod
+    BATCH: July java 2025
+    FRN: 23
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Write a SQL statement to display all the information of all actors
+-->
+    SELECT * FROM ACTORS
+
+
+2. Write a query to display the columns in descending order of rating of movie
+-->
+   SELECT * FROM MOVIES
+   ORDER BY IMDB_RATING DESC; 
+
+
+2. 3. Write a SQL statement to display names of actors who are male and received awards more
+than 10.
+-->
+   SELECT NAME FROM ACTORS
+   WHERE GENDER="MALE" AND NO_OF_AWARDS>10;
+
+
+4. Write a SQL query to display the role followed by all movie id for the actor who is having
+actor id as 101
+-->
+    SELECT ROLE,M_ID FROM ROLE
+    WHERE A_ID=101;
+
+
+5. Write a SQL query to find the actor who is not Indian
+-->
+   SELECT NAME FROM ACTORS
+   WHERE NATIONALITY !="INDIAN";
+
+
+6. Write a SQL statement to find the number of actors worked in each movie.
+-->
+    SELCT M_ID, COUNT(A_ID)FROM ROLE
+    GROUP BY M_ID;
+
+
+7. Write a SQL statement to find the role played by ‘Amir khan’ actor in 3 idiots movie.
+-->
+
+
+
+8. Write a SQL statement to find the details of movie having lowest total budget.
+-->
+    SELECT * FROM MOVIES
+    ORDER BY T_BUDGET ASC LIMIT 1;
+
+9. Write a SQL statement that finds out count of actors according to gender
+-->
+   SELECT COUNT(*) FROM ACTORS
+   GROUP BY GENDER;
+
+10. Write a query to find all the roles of actor who have played in movie with id 3.
+-->
+    SELECT M.MNAME, A.NAME AS ACTOR_NAME, R.ROLE
+    FROM MOVIES M
+   JOIN ROLE R ON M.M_ID = R.M_ID
+   JOIN ACTORS A ON A.ACT_ID = R.A_ID
+  WHERE M.M_ID = 3;
+
